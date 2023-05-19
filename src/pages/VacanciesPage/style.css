@@ -1,0 +1,144 @@
+.vacancies {
+  padding-top: 124px;
+}
+.vacancies__container {
+  width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  gap: 28px;
+}
+
+.vacancies__column-2 {
+  width: 770px;
+  padding-bottom: 40px;
+}
+
+.vacanciesList__searchForm {
+  display: flex;
+}
+.vacanciesList__searchForm input {
+  width: 700px;
+}
+
+.vacanciesList__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.vacanciestList__block {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 24px 0 24px 24px;
+  position: relative;
+  stroke: red;
+}
+
+.vacanciesList__profession {
+  font-weight: 600;
+  font-size: 20px;
+  color: #5e96fc;
+  width: 90%;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.vacanciesList__loader {
+  position: absolute;
+  left: 60%;
+  top: 60%;
+  z-index: 999;
+}
+
+.vacanciesList__work {
+  font-size: 16px;
+  font-weight: 400;
+  color: 232134;
+}
+
+.vacanciesList__salary-block {
+  display: flex;
+  margin-bottom: 10px;
+}
+.vacanciesList__salary-block img {
+  margin: 0 12px;
+}
+
+.vacanciesList__salary {
+  font-weight: 600;
+  font-size: 16px;
+  color: #232134;
+}
+
+.vacanciesList__town {
+  font-weight: 400;
+  font-size: 16px;
+  color: #232134;
+}
+.vacanciesList__star {
+  position: absolute;
+  left: 95%;
+}
+.vacanciesList__star img {
+  cursor: pointer;
+}
+
+.vacanciesList__location {
+  display: flex;
+}
+.vacanciesList__location img {
+  margin-right: 8px;
+}
+
+.vacanciesList__payment_currency {
+  margin-left: 8px;
+}
+
+.vacancies__column-1 {
+  width: 315px;
+
+}
+
+.filters {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.filters__header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.filters__header button {
+  padding: 0;
+  color: #acadb9;
+}
+.filters__header h2{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.filters__form p {
+  font-size: 16;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.filters__number-select{
+  margin-top: 20px;
+}
+.filters__number-select input:first-child{
+  margin-bottom: 8px;
+}
+
+#mantine-4n9zjk256{
+  margin-bottom: 20px;
+}
+
+.vacancies__pagination {
+  margin: 0 auto;
+}

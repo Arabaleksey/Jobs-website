@@ -1,0 +1,21 @@
+.vacancyInfo {
+  padding-top: 124px;
+}
+.vacancyInfo__container {
+  width: 1120px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.vacancyInfo__info {
+  width: 773px;
+  margin: 0 auto;
+  color: #232134;
+}
+
+.vacancyInfo__about {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 20px;
+}
