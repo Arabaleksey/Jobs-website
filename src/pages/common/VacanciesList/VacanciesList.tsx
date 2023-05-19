@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Input } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import { useAppSelector } from "../../../hooks/useAppSelector";
@@ -7,18 +7,15 @@ import { fetchVacanies } from "../../../store/reducers/actionCreator";
 import { useDebounce } from "../../../hooks/useDebounce";
 import { Pagination } from "@mantine/core";
 import { Loader } from "@mantine/core";
-import { useHistory } from "react-router-dom";
 import VacancyMainInfo from "../VacancyMainInfo/VacancyMainInfo";
 
 const VacanciesList = ({ page, setPage }: any) => {
-  const router = useHistory();
   const totalVacanciesOnPage = 4;
   const [searchValue, setSearchValue] = useState("");
 
   const dispatch = useAppDispatch();
   const {
     vacancies,
-    isError,
     isLoading,
     totalVacancies,
     catalogue,

@@ -13,7 +13,7 @@ import {
 
 const Filters = ({ setPage }: any) => {
   const dispatch = useAppDispatch();
-  const { catalogues, isError, isLoading } = useAppSelector(
+  const { catalogues } = useAppSelector(
     (state) => state.cataloguesReducer
   );
 

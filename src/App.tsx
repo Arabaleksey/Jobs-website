@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import Header from "./layout/Header";
 import AppRouter from "./components/AppRouter/AppRouter";

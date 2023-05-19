@@ -5,7 +5,6 @@ import {
   addToFavourites,
   deleteChekedVacancy,
 } from "../../../store/reducers/favouriteSlice";
-import { IconJewishStar, IconJewishStarFilled } from "@tabler/icons-react";
 import deleteBtn from "../../../../public/Delete_btn.svg";
 import saveBtn from "../../../../public/Save_btn.svg";
 

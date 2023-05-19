@@ -22,5 +22,5 @@ export interface IVacancy {
   paymant_to?: string;
   paymant_from?: string;
   currency?: string;
-  vacancyRichText?: string;
+  vacancyRichText: string;
 }

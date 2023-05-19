@@ -25,7 +25,9 @@ const AppRouter = () => {
       <Route path={Routes.FAVOURITES}>
         <FavouritesPage></FavouritesPage>
       </Route>
-      <Route path="*"><ErrorPage></ErrorPage></Route>
+      <Route path="*">
+        <ErrorPage></ErrorPage>
+      </Route>
     </Switch>
   );
 };
