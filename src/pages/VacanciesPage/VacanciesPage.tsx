@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./style.css";
 
 import Filters from "../common/Filters/Filters";

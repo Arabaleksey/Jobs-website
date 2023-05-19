@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, NumberInput } from "@mantine/core";
 import { IconX } from "@tabler/icons-react";
 import { Select } from "@mantine/core";

@@ -1,6 +1,4 @@
-import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-// import ErrorPage from "../../pages/ErrorPage.tsx/ErrorPage";
 import { Routes } from "../../constants/Routes";
 import VanaciesPage from "../../pages/VacanciesPage/VacanciesPage";
 import ErrorPage from "../../pages/ErrorPage.tsx/ErrorPage";

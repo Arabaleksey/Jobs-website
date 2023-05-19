@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Input } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import { useAppSelector } from "../../../hooks/useAppSelector";

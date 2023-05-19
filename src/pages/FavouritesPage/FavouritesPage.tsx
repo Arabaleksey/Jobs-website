@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import "./style.css";
 import { Routes } from "../../constants/Routes";

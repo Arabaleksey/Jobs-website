@@ -1,4 +1,3 @@
-import React from "react";
 import "./style.css";
 import logo from "../../public/Jobored.svg";
 import "./style.css";
