@@ -6,7 +6,7 @@ export const fetchVacanies = createAsyncThunk(
   "vacancies/fetchSeacrh",
   async (
     {
-      searchValue,
+      keyword,
       page,
       totalVacanciesOnPage,
       catalogue,
@@ -17,7 +17,7 @@ export const fetchVacanies = createAsyncThunk(
   ) => {
     try {
       const response = await VacanciesService.getAllVacancies(
-        searchValue,
+        keyword,
         page,
         totalVacanciesOnPage,
         catalogue,

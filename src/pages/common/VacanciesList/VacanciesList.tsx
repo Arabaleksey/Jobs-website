@@ -8,10 +8,10 @@ import { fetchVacanies } from "../../../store/reducers/actionCreator";
 import { Pagination } from "@mantine/core";
 import { Loader } from "@mantine/core";
 import VacancyMainInfo from "../VacancyMainInfo/VacancyMainInfo";
+import { getKeyword } from "../../../store/reducers/vacanciesSlice";
 
 const VacanciesList = ({ page, setPage }: any) => {
   const totalVacanciesOnPage = 4;
-  const [searchValue, setSearchValue] = useState("");
 
   const dispatch = useAppDispatch();
   const {
@@ -21,6 +21,7 @@ const VacanciesList = ({ page, setPage }: any) => {
     catalogue,
     paymentFrom,
     paymentTo,
+    keyword,
   } = useAppSelector((state) => state.vacanciesReducer);
 
   // const debounceOnChange = useDebounce((e: any) => {
@@ -30,7 +31,7 @@ const VacanciesList = ({ page, setPage }: any) => {
   const handleFetchingVacancies = () => {
     dispatch(
       fetchVacanies({
-        searchValue,
+        keyword,
         page,
         totalVacanciesOnPage,
         catalogue,
@@ -52,7 +53,8 @@ const VacanciesList = ({ page, setPage }: any) => {
       >
         <Input
           // onChange={debounceOnChange}
-          onChange={(e) => setSearchValue(e.target.value)}
+          value={keyword}
+          onChange={(e) => dispatch(getKeyword(e.target.value))}
           icon={<IconSearch />}
           placeholder="Введите название вакансии"
           data-elem="search-input"

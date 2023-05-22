@@ -10,6 +10,7 @@ interface VacanciesState {
   catalogue: any;
   paymentFrom: any;
   paymentTo: any;
+  keyword: string;
 }
 
 const initialState: VacanciesState = {
@@ -20,6 +21,7 @@ const initialState: VacanciesState = {
   catalogue: "",
   paymentFrom: "",
   paymentTo: "",
+  keyword: "",
 };
 
 export const vacanciesSlice = createSlice({
@@ -34,6 +36,9 @@ export const vacanciesSlice = createSlice({
     },
     getPaymentTo(state, action) {
       state.paymentTo = action.payload;
+    },
+    getKeyword(state, action) {
+      state.keyword = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -60,5 +65,5 @@ export const vacanciesSlice = createSlice({
 });
 
 export default vacanciesSlice.reducer;
-export const { getCatalog, getPaymentTo, getPaymentFrom } =
+export const { getCatalog, getPaymentTo, getPaymentFrom, getKeyword } =
   vacanciesSlice.actions;
