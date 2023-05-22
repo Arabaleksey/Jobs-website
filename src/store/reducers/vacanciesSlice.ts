@@ -17,9 +17,9 @@ const initialState: VacanciesState = {
   totalVacancies: 0,
   isLoading: false,
   isError: "",
-  catalogue: 0,
-  paymentFrom: 0,
-  paymentTo: 0,
+  catalogue: "",
+  paymentFrom: "",
+  paymentTo: "",
 };
 
 export const vacanciesSlice = createSlice({
@@ -44,7 +44,6 @@ export const vacanciesSlice = createSlice({
         state.isLoading = false;
         state.vacancies = action.payload.objects || [];
         state.totalVacancies = action.payload.total || 0;
-        // state.vacancies = [...state.vacancies, ...(action.payload || [])];
       }
     );
     builder.addCase(fetchVacanies.pending, (state) => {

@@ -20,11 +20,9 @@ export default class VacanciesService {
     }>(
       `https://startup-summer-2023-proxy.onrender.com/2.0/vacancies/?published=1&keyword=${searchValue}&page=${
         page - 1
-      }&count=${totalVacanciesOnPage}&catalogues=${
-        catalogue === 0 ? "" : catalogue
-      }&payment_from=${paymentFrom === 0 ? "" : paymentFrom}&payment_to=${
-        paymentTo === 0 ? "" : paymentTo
-      }&no_agreement=${paymentFrom !== 0 || paymentTo !== 0 ? 1 : ""}`,
+      }&count=${totalVacanciesOnPage}&catalogues=${catalogue}&payment_from=${paymentFrom}&payment_to=${paymentTo}&no_agreement=${
+        paymentFrom !== "" || paymentTo !== "" ? 1 : 0
+      }`,
       {
         headers: {
           "x-secret-key": "GEU4nvd3rej*jeh.eqp",
@@ -36,7 +34,6 @@ export default class VacanciesService {
         },
       }
     );
-    console.log(response.data);
     return response.data;
   }
 

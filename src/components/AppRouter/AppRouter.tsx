@@ -8,7 +8,7 @@ import FavouritesPage from "../../pages/FavouritesPage/FavouritesPage";
 const AppRouter = () => {
   return (
     <Switch>
-      <Route path={Routes.VACANCIES}>
+      <Route exact path={Routes.VACANCIES}>
         <VanaciesPage></VanaciesPage>
       </Route>
       <Route exact path="/">
@@ -17,7 +17,7 @@ const AppRouter = () => {
       <Route path={Routes.ERROR}>
         <ErrorPage></ErrorPage>
       </Route>
-      <Route path={Routes.VACANCY_INFO_ID}>
+      <Route exact path={Routes.VACANCY_ID}>
         <VacancyInfoPage></VacancyInfoPage>
       </Route>
       <Route path={Routes.FAVOURITES}>

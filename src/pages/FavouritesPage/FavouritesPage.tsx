@@ -12,7 +12,6 @@ const FavouritesPage = () => {
   const { favouriteVacancies } = useAppSelector(
     (state) => state.vacancyFavouriteReducer
   );
-  console.log(favouriteVacancies);
   return (
     <div className="favouriteVacancies">
       {favouriteVacancies.length === 0 && (
@@ -35,7 +34,7 @@ const FavouritesPage = () => {
             <VacancyMainInfo vacancy={vacancy} />
             <h3
               onClick={() => {
-                router.push(`${Routes.VACANCY_INFO}/${vacancy.id}`);
+                router.push(`${Routes.VACANCIES}/${vacancy.id}`);
               }}
             ></h3>
           </div>

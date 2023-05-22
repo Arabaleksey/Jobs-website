@@ -4,7 +4,7 @@ import { IconSearch } from "@tabler/icons-react";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { fetchVacanies } from "../../../store/reducers/actionCreator";
-import { useDebounce } from "../../../hooks/useDebounce";
+// import { useDebounce } from "../../../hooks/useDebounce";
 import { Pagination } from "@mantine/core";
 import { Loader } from "@mantine/core";
 import VacancyMainInfo from "../VacancyMainInfo/VacancyMainInfo";
@@ -23,9 +23,9 @@ const VacanciesList = ({ page, setPage }: any) => {
     paymentTo,
   } = useAppSelector((state) => state.vacanciesReducer);
 
-  const debounceOnChange = useDebounce((e: any) => {
-    setSearchValue(e.target.value);
-  }, 500);
+  // const debounceOnChange = useDebounce((e: any) => {
+  //   setSearchValue(e.target.value);
+  // }, 500);
 
   const handleFetchingVacancies = () => {
     dispatch(
@@ -42,7 +42,7 @@ const VacanciesList = ({ page, setPage }: any) => {
 
   useEffect(() => {
     handleFetchingVacancies();
-  }, [searchValue, page, catalogue, paymentFrom, paymentTo]);
+  }, [page, catalogue, paymentFrom, paymentTo]);
 
   return (
     <>
@@ -51,7 +51,8 @@ const VacanciesList = ({ page, setPage }: any) => {
         onSubmit={(e) => e.preventDefault()}
       >
         <Input
-          onChange={debounceOnChange}
+          // onChange={debounceOnChange}
+          onChange={(e) => setSearchValue(e.target.value)}
           icon={<IconSearch />}
           placeholder="Введите название вакансии"
           data-elem="search-input"

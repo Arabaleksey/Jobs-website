@@ -11,7 +11,7 @@ const VacancyMainInfo = ({ vacancy }: any) => {
       <div className="vacanciestList__block" key={vacancy.id}  data-elem={`vacancy-${vacancy.id}`}>
         <h3
           onClick={() => {
-            router.push(`${Routes.VACANCY_INFO}/${vacancy.id}`);
+            router.push(`${Routes.VACANCIES}/${vacancy.id}`);
           }}
           className="vacanciesList__profession"
         >

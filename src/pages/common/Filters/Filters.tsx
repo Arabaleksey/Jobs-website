@@ -13,43 +13,36 @@ import {
 
 const Filters = ({ setPage }: any) => {
   const dispatch = useAppDispatch();
-  const { catalogues } = useAppSelector(
-    (state) => state.cataloguesReducer
-  );
+  const { catalogues } = useAppSelector((state) => state.cataloguesReducer);
 
   const options = catalogues.map((catalogue: any) => {
     return { value: catalogue.key, label: `${catalogue.title}` };
   });
 
-  const [catalogueValue, setcatalogueValue] = useState<any>(0);
-  const [paymentFromValue, setpaymentFromValue] = useState<number | "">("");
-  const [paymentToValue, setpaymentToValue] = useState<number | "">("");
+  const [catalogueValue, setCatalogueValue] = useState<any>("");
+  const [paymentFromValue, setPaymentFromValue] = useState<number | "">("");
+  const [paymentToValue, setPaymentToValue] = useState<number | "">("");
 
   const handleFetchingVacancies = () => {
     dispatch(getCatalog(catalogueValue));
-    {
-      typeof paymentFromValue === "number" &&
-        dispatch(getPaymentFrom(paymentFromValue));
-    }
-    {
-      typeof paymentToValue === "number" &&
-        dispatch(getPaymentTo(paymentToValue));
-    }
+    dispatch(getPaymentFrom(paymentFromValue));
+    dispatch(getPaymentTo(paymentToValue));
     setPage(1);
   };
 
   const clearAllFilter = () => {
-    dispatch(getCatalog(0));
-    dispatch(getPaymentTo(0));
-    dispatch(getPaymentFrom(0));
-    setpaymentFromValue("");
-    setpaymentToValue("");
-    setcatalogueValue(0);
+    dispatch(getCatalog(""));
+    dispatch(getPaymentTo(""));
+    dispatch(getPaymentFrom(""));
+    setPaymentFromValue("");
+    setPaymentToValue("");
+    setCatalogueValue("");
   };
 
   useEffect(() => {
     dispatch(fetchCatalogues());
   }, []);
+
   return (
     <div className="filters">
       <div className="filters__header">
@@ -69,7 +62,7 @@ const Filters = ({ setPage }: any) => {
             searchable
             placeholder="Выберите отрасль"
             value={catalogueValue}
-            onChange={setcatalogueValue}
+            onChange={setCatalogueValue}
             data={options}
             data-elem="industry-select"
           />
@@ -79,9 +72,9 @@ const Filters = ({ setPage }: any) => {
           <NumberInput
             placeholder="От"
             value={paymentFromValue}
-            onChange={setpaymentFromValue}
+            onChange={setPaymentFromValue}
             withAsterisk
-            min={0}
+            min={1}
             max={100000000000000000000}
             step={500}
             stepHoldDelay={400}
@@ -91,9 +84,9 @@ const Filters = ({ setPage }: any) => {
           <NumberInput
             placeholder="До"
             value={paymentToValue}
-            onChange={setpaymentToValue}
+            onChange={setPaymentToValue}
             withAsterisk
-            min={0}
+            min={1}
             max={100000000000000000000}
             step={500}
             stepHoldDelay={400}

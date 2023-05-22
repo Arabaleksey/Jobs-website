@@ -8,6 +8,7 @@ export default class CataloguesService {
         headers: { "x-secret-key": "GEU4nvd3rej*jeh.eqp" },
       }
     );
+    
     return response.data;
   }
 }
