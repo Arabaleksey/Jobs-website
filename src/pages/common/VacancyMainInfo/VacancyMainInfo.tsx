@@ -8,7 +8,11 @@ const VacancyMainInfo = ({ vacancy }: any) => {
   const router = useHistory();
   return (
     <>
-      <div className="vacanciestList__block" key={vacancy.id}  data-elem={`vacancy-${vacancy.id}`}>
+      <div
+        className="vacanciestList__block"
+        key={vacancy.id}
+        data-elem={`vacancy-${vacancy.id}`}
+      >
         <h3
           onClick={() => {
             router.push(`${Routes.VACANCIES}/${vacancy.id}`);
