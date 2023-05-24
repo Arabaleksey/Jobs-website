@@ -14,6 +14,9 @@ import {
 const Filters = ({ setPage }: any) => {
   const dispatch = useAppDispatch();
   const { catalogues } = useAppSelector((state) => state.cataloguesReducer);
+  const { paymentFrom, paymentTo, catalogue } = useAppSelector(
+    (state) => state.vacanciesReducer
+  );
 
   const options = catalogues.map((catalogue: any) => {
     return { value: catalogue.key, label: `${catalogue.title}` };
@@ -24,9 +27,9 @@ const Filters = ({ setPage }: any) => {
   const [paymentToValue, setPaymentToValue] = useState<number | "">("");
 
   const handleFetchingVacancies = () => {
-    dispatch(getCatalog(catalogueValue));
-    dispatch(getPaymentFrom(paymentFromValue));
-    dispatch(getPaymentTo(paymentToValue));
+    dispatch(getCatalog(catalogueValue || catalogue));
+    dispatch(getPaymentFrom(paymentFromValue || paymentFrom));
+    dispatch(getPaymentTo(paymentToValue || paymentTo));
     setPage(1);
   };
 
@@ -61,7 +64,7 @@ const Filters = ({ setPage }: any) => {
           <Select
             searchable
             placeholder="Выберите отрасль"
-            value={catalogueValue}
+            value={catalogueValue || catalogue}
             onChange={setCatalogueValue}
             data={options}
             data-elem="industry-select"
@@ -71,7 +74,7 @@ const Filters = ({ setPage }: any) => {
           <p>Оклад</p>
           <NumberInput
             placeholder="От"
-            value={paymentFromValue}
+            value={paymentFromValue || paymentFrom}
             onChange={setPaymentFromValue}
             withAsterisk
             min={1}
@@ -82,8 +85,9 @@ const Filters = ({ setPage }: any) => {
             data-elem="salary-from-input"
           />
           <NumberInput
+            onClick={(e: any) => console.log(e.target.value)}
             placeholder="До"
-            value={paymentToValue}
+            value={paymentToValue || paymentTo}
             onChange={setPaymentToValue}
             withAsterisk
             min={1}
