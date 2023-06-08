@@ -18,7 +18,7 @@ export default class VacanciesService {
       total: number;
       objects: IVacancy[];
     }>(
-      `https://startup-summer-2023-proxy.onrender.com/2.0/vacancies/?published=1&keyword=${keyword}&page=${
+      `proxy-server-for-jobs-website.vercel.app/2.0/vacancies/?published=1&keyword=${keyword}&page=${
         page - 1
       }&count=${totalVacanciesOnPage}&catalogues=${catalogue}&payment_from=${paymentFrom}&payment_to=${paymentTo}&no_agreement=${
         paymentFrom !== "" || paymentTo !== "" ? 1 : 0
@@ -39,7 +39,7 @@ export default class VacanciesService {
 
   static async getVacancyById(vacancyId: string) {
     const response = await axios.get<any>(
-      `https://startup-summer-2023-proxy.onrender.com/2.0/vacancies/${vacancyId}`,
+      `proxy-server-for-jobs-website.vercel.app/2.0/vacancies/${vacancyId}`,
       {
         headers: {
           "x-secret-key": "GEU4nvd3rej*jeh.eqp",

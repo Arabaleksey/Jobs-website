@@ -75,10 +75,7 @@ const VacanciesList = ({ page, setPage }: any) => {
       )}
       <div className="vacanciesList__wrapper">
         {vacancies.map((vacancy: any) => (
-          <VacancyMainInfo
-            key={vacancy.id}
-            vacancy={vacancy}
-          />
+          <VacancyMainInfo key={vacancy.id} vacancy={vacancy} />
         ))}
         <div className="vacancies__pagination">
           {vacancies.length !== 0 && totalVacancies > totalVacanciesOnPage && (
